@@ -1,3 +1,7 @@
-
+ /*
+ //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';
 @import 'contenido/contenido';
+*/
+
+@use 'base';

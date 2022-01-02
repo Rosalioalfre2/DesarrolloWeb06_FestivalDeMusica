@@ -1,13 +1,15 @@
 //Solicitamos la dependencia
 const { src , dest , watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const plumber = require('gulp-plumber');
 
 function css(done){
     console.log('Compilando SASS....')
 
     //Pasos
 
-        src('src/scss/app.scss') //1. Identificar el archivo .SCSS a compilar
+        src('src/scss/**/*.scss') //1. Identificar el archivo .SCSS a compilar
+            .pipe( plumber() )
             .pipe(sass()) //2. Compilarlo
             .pipe(dest('build/css')) //3. Almacenarlo
 
@@ -17,11 +19,10 @@ function css(done){
     done();
 }
 
-function watchSCSS(done){
-    watch('src/scss/app.scss', css);
-    console.log('Funcion watch scss');
+function dev( done ) {
+    watch('src/scss/**/*.scss', css);
     done();
 }
 
 exports.css = css;
-exports.watchSCSS = watchSCSS;
+exports.dev = dev;
