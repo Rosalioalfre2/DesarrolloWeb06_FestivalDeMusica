@@ -1,0 +1,29 @@
+{
+  "name": "festival-de-musica",
+  "version": "1.0.0",
+  "description": "Festival de musica proyecto con Sass y gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rosalioalfre2/DesarrolloWeb06_FestivalDeMusica.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Rosalio Monterrosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rosalioalfre2/DesarrolloWeb06_FestivalDeMusica/issues"
+  },
+  "homepage": "https://github.com/Rosalioalfre2/DesarrolloWeb06_FestivalDeMusica#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.45.2"
+  }
+}
