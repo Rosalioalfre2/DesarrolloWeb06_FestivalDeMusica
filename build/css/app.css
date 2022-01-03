@@ -443,6 +443,49 @@ h3 {
     @include m.heading(v.$rosa, true);
 }
 */
+.contenedor-video {
+  position: relative;
+  max-height: 70rem;
+  min-height: 50rem;
+  overflow: hidden;
+}
+.contenedor-video .overlay {
+  position: absolute;
+  background: #a701a4;
+  background: linear-gradient(306deg, rgba(167, 1, 164, 0.3) 0%, rgba(12, 1, 254, 0.3) 100%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenedor-video .video {
+  width: auto;
+  display: block;
+}
+@media (min-width: 992px) {
+  .contenedor-video .video {
+    width: 100%;
+  }
+}
+
+.contenido-video {
+  z-index: 1;
+}
+.contenido-video h2 {
+  color: #FFF;
+  font-size: 7rem;
+  margin: 0;
+}
+.contenido-video p {
+  margin: 0;
+  color: #000;
+  background-color: #F53756;
+  display: inline-block;
+  font-weight: 700;
+  padding: 1rem 2rem;
+}
+
 /*
  //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';
