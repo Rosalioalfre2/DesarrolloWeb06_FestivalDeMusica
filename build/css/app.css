@@ -382,6 +382,21 @@ h3 {
   font-size: 3rem;
 }
 
+/*
+//Ejemplo de un mixing
+@mixin heading ($color : blue, $border-radius: false) {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+
+
+    @if $border-radius{
+        border: black 2px solid;
+        border-radius: 50%;
+    }
+}
+*/
 .header {
   background-color: #4CB8B3;
 }
@@ -397,13 +412,13 @@ h3 {
   color: #FEF46D;
 }
 
-.prueba {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  color: black;
-  letter-spacing: 1px;
+/*
+//Ejemplo del mixin y haciendo uso de este
+@use 'base/mixins' as m;
+.prueba{
+    @include m.heading(v.$rosa, true);
 }
-
+*/
 /*
  //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';

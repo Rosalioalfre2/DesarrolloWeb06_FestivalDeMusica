@@ -1,6 +1,16 @@
-@mixin heading {
+
+/*
+//Ejemplo de un mixing
+@mixin heading ($color : blue, $border-radius: false) {
     text-transform: uppercase;
     font-size: 2.4rem;
-    color: black;
+    color: $color;
     letter-spacing: 1px;
+
+
+    @if $border-radius{
+        border: black 2px solid;
+        border-radius: 50%;
+    }
 }
+*/

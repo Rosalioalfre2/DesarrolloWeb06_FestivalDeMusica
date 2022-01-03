@@ -1,5 +1,4 @@
 @use 'base/variables' as v;
-@use 'base/mixins' as m;
 
 .header{
     background-color: v.$verde;
@@ -20,6 +19,10 @@
     }
 }
 
+/*
+//Ejemplo del mixin y haciendo uso de este
+@use 'base/mixins' as m;
 .prueba{
-    @include m.heading;
+    @include m.heading(v.$rosa, true);
 }
+*/
