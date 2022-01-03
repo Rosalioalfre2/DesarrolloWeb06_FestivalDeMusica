@@ -414,7 +414,6 @@ h3 {
 
 /*
 //Ejemplo del mixin y haciendo uso de este
-@use 'base/mixins' as m;
 .prueba{
     @include m.heading(v.$rosa, true);
 }
