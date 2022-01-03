@@ -6,6 +6,21 @@
 
     h1{
         color: v.$blanco;
+        text-align: center;
+        margin: 0 0 2rem 0;
+
+        @include m.tablet{
+            margin: 0;
+        }
+    }
+
+    .contenido-header{
+        @include m.tablet{
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            align-items: center;
+        }
     }
 }
 
@@ -13,10 +28,18 @@
     a{
         color: v.$blanco;
         font-size: 2.4rem;
-
+        display: block;
+        text-align: center;
+        margin: 0 0 1rem 0;
         &:hover{
             color: v.$amarillo;
         }
+    }
+
+    @include m.tablet{
+        display: flex;
+        gap: 2rem;
+        margin: 0;
     }
 }
 
