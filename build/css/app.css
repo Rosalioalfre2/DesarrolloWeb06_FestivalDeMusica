@@ -382,6 +382,11 @@ h3 {
   font-size: 3rem;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 /*
 //Ejemplo de un mixing
 @mixin heading ($color : blue, $border-radius: false) {
@@ -484,6 +489,39 @@ h3 {
   display: inline-block;
   font-weight: 700;
   padding: 1rem 2rem;
+}
+
+.sobre-festival {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5rem auto;
+}
+@media (min-width: 992px) {
+  .sobre-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+}
+
+.contenido-festival {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenido-festival h2 {
+  margin: 2rem 0 1rem 0;
+  font-weight: 700;
+}
+.contenido-festival p {
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+.contenido-festival .fecha {
+  line-height: 5;
+  font-weight: 700;
+  color: #F53756;
 }
 
 /*
