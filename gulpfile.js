@@ -1,15 +1,17 @@
 //Solicitamos la dependencia
 const { src , dest , watch, parallel } = require('gulp');
+
+// CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
-const webp = require('gulp-webp');
 
-function print(mensaje){
-    console.log(mensaje);
-}
+//Imagenes
+const webp = require('gulp-webp');
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
+const avif = require('gulp-avif');
 
 function css(done){
-    console.log('Compilando SASS....')
 
     //Pasos
 
@@ -19,7 +21,6 @@ function css(done){
             .pipe(dest('build/css')) //3. Almacenarlo
 
 
-    console.log('\nSe compilo correctamente');
 
     done();
 }
@@ -39,11 +40,39 @@ function versionWebp( done ){
         .pipe( webp(opciones) )
         .pipe(dest('build/img'));
 
-    print("Se conviertieron las imagenes con exito");
+    done()
+}
+
+function rebajarImagenes( done ){
+
+    const opciones = {
+        optimizationLevel: 3,
+    }
+
+    src('src/img/**/*.{png,jpg,jpeg}')
+    .pipe( cache( imagemin(opciones) ) )
+    .pipe( dest('build/img'));
+
+
+    done();
+}
+
+function versionAvif( done ){
+    
+    const opciones = {
+        quality: 50,
+    };
+
+    src('src/img/**/*.{png,jpg,jpeg}')
+        .pipe( avif(opciones) )
+        .pipe(dest('build/img'));
+
     done()
 }
 
 exports.css = css;
 exports.webp = versionWebp;
+exports.avif = versionAvif;
 exports.watchScss = watchScss;
-exports.dev = parallel(css, versionWebp, watchScss);
+exports.rebajarImagenes = rebajarImagenes;
+exports.dev = parallel(css, versionWebp, rebajarImagenes, versionAvif, watchScss);
