@@ -337,6 +337,21 @@ template {
   display: none;
 }
 
+/*
+//Ejemplo de un mixing
+@mixin heading ($color : blue, $border-radius: false) {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+
+
+    @if $border-radius{
+        border: black 2px solid;
+        border-radius: 50%;
+    }
+}
+*/
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -349,6 +364,9 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
+}
+body.fijar-body {
+  overflow: hidden;
 }
 
 p {
@@ -389,21 +407,6 @@ img {
   height: auto;
 }
 
-/*
-//Ejemplo de un mixing
-@mixin heading ($color : blue, $border-radius: false) {
-    text-transform: uppercase;
-    font-size: 2.4rem;
-    color: $color;
-    letter-spacing: 1px;
-
-
-    @if $border-radius{
-        border: black 2px solid;
-        border-radius: 50%;
-    }
-}
-*/
 .bg-amarillo {
   background-color: #FEF46D;
 }
@@ -510,7 +513,7 @@ img {
   .sobre-festival {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 5rem;
+    gap: 5rem;
   }
 }
 
@@ -551,7 +554,7 @@ img {
   .escenarios-contenedor {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 5rem;
+    gap: 5rem;
   }
 }
 .escenarios-contenedor p {
@@ -603,6 +606,73 @@ img {
 /* *{
     border: 2px solid black;
 } */
+.galeria {
+  margin: 5rem auto;
+}
+.galeria h3 {
+  text-align: center;
+}
+
+.galeria-imagenes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 480px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
+}
+
+.imagen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.imagen-overlay picture {
+  display: block;
+  max-width: 120rem;
+}
+
+.cerrar {
+  padding: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #FFF;
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 /*
  //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';

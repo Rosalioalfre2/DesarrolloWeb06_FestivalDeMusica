@@ -27,6 +27,7 @@ function css(done){
 
 function watchScss( done ) {
     watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', javascript);
     done();
 }
 
@@ -70,10 +71,18 @@ function versionAvif( done ){
     done()
 }
 
+function javascript( done ){
+    src('src/js/**/*.js')
+        .pipe(dest('build/js'));
+
+    done();
+}
+
 exports.css = css;
 exports.webp = versionWebp;
 exports.avif = versionAvif;
 exports.watchScss = watchScss;
 exports.rebajarImagenes = rebajarImagenes;
+exports.javascript = javascript;
 exports.imagenes = parallel(versionWebp, rebajarImagenes, versionAvif);
-exports.dev = parallel(css, watchScss);
+exports.dev = parallel(css, javascript, watchScss);

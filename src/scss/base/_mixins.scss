@@ -41,10 +41,10 @@
     }
 }
 
-@mixin grid($cantidadColumnas : 2, $columnGap : 2rem) {
+@mixin grid($cantidadColumnas : 2, $gap : 2rem) {
     display: grid;
     grid-template-columns: repeat($cantidadColumnas, 1fr);
-    column-gap: $columnGap;
+    gap: $gap;
     @content;
 }
 
