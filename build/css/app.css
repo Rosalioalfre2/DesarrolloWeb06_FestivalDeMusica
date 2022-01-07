@@ -404,6 +404,14 @@ img {
     }
 }
 */
+.bg-amarillo {
+  background-color: #FEF46D;
+}
+
+.bg-verde {
+  background-color: #4CB8B3;
+}
+
 .header {
   background-color: #4CB8B3;
 }
@@ -526,6 +534,75 @@ img {
   color: #F53756;
 }
 
+.lineup {
+  background-color: #F53756;
+  padding: 5rem 0;
+}
+.lineup h3, .lineup p {
+  text-align: center;
+  color: #FFF;
+}
+.lineup .dia {
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .escenarios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+}
+.escenarios-contenedor p {
+  color: #000;
+}
+.escenarios-contenedor .escenario {
+  padding: 2rem 0 0 0;
+}
+.escenarios-contenedor .escenario p:after {
+  content: "";
+  display: block;
+  width: 20rem;
+  height: 10rem;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 2rem auto 0 auto;
+}
+
+.rock .nombre-escenario:after {
+  background-image: url(../img/icono_rock.png);
+}
+
+.edm .nombre-escenario:after {
+  background-image: url(../img/icono_edm.png);
+}
+
+.calendario {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendario li span {
+  font-weight: 400;
+}
+
+.amarillo li:nth-child(odd) {
+  background-color: #fdee21;
+}
+
+.verde li:nth-child(odd) {
+  background-color: #348380;
+}
+
+/* *{
+    border: 2px solid black;
+} */
 /*
  //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';

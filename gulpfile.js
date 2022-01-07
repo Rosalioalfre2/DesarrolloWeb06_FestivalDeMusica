@@ -75,4 +75,5 @@ exports.webp = versionWebp;
 exports.avif = versionAvif;
 exports.watchScss = watchScss;
 exports.rebajarImagenes = rebajarImagenes;
-exports.dev = parallel(css, versionWebp, rebajarImagenes, versionAvif, watchScss);
+exports.imagenes = parallel(versionWebp, rebajarImagenes, versionAvif);
+exports.dev = parallel(css, watchScss);
