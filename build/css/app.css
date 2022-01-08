@@ -741,6 +741,16 @@ img {
   text-transform: uppercase;
 }
 
+.site-footer {
+  background-color: #F53756;
+  padding: 1rem;
+  text-align: center;
+}
+.site-footer p {
+  margin: 0;
+  color: #FFF;
+}
+
 /*
  //Forma antigua de como era scss en la importacion de archivos
 @import 'base/variables';
