@@ -415,6 +415,18 @@ img {
   background-color: #4CB8B3;
 }
 
+.bg-rosa {
+  background-color: #F53756;
+}
+
+.bg-morado {
+  background-color: #752F97;
+}
+
+.bg-blanco {
+  background-color: #FFF;
+}
+
 .header {
   background-color: #4CB8B3;
 }
@@ -671,6 +683,62 @@ img {
   place-items: center;
   font-weight: 700;
   cursor: pointer;
+}
+
+.boletos {
+  padding: 5rem 0;
+}
+.boletos h3 {
+  text-align: center;
+  color: #FFF;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .contenedor-boletos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.pase .nombre-pase {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFF;
+}
+.pase-header {
+  background-color: #F53756;
+}
+.pase-body {
+  background-color: #FFF;
+  padding: 0;
+}
+.pase-body .incluido-por-boleto {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pase-body .incluido-por-boleto li:nth-child(odd) {
+  background-color: #cccccc;
+  border-bottom: solid 2px #E1E1E1;
+}
+.pase-body .incluido-por-boleto li {
+  font-size: 2rem;
+  padding: 2rem 1rem;
+}
+.pase-footer {
+  background-color: #752F97;
+}
+.pase-header, .pase-footer {
+  padding: 0.5rem;
+}
+.pase-header p, .pase-footer p {
+  text-align: center;
+  color: #FFF;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /*
