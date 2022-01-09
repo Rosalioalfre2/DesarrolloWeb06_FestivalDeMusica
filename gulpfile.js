@@ -14,7 +14,11 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const avif = require('gulp-avif');
 
+//Source maps para css
 const sourcemaps = require('gulp-sourcemaps');
+
+//Javascript
+const terser = require('gulp-terser-js');
 
 function css(done){
 
@@ -78,6 +82,9 @@ function versionAvif( done ){
 
 function javascript( done ){
     src('src/js/**/*.js')
+        .pipe( sourcemaps.init() )
+        .pipe( terser() )
+        .pipe( sourcemaps.write('.'))
         .pipe(dest('build/js'));
 
     done();
