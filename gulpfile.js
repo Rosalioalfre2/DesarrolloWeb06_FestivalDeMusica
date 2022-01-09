@@ -14,14 +14,18 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const avif = require('gulp-avif');
 
+const sourcemaps = require('gulp-sourcemaps');
+
 function css(done){
 
     //Pasos
 
         src('src/scss/**/*.scss') //1. Identificar el archivo .SCSS a compilar
+            .pipe( sourcemaps.init() )
             .pipe( plumber() )
             .pipe(sass()) //2. Compilarlo
             .pipe( postcss( [ autoprefixer(), cssnano() ] ) )
+            .pipe(sourcemaps.write('.'))
             .pipe(dest('build/css')) //3. Almacenarlo
     done();
 }
